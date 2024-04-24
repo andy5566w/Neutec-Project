@@ -4,7 +4,14 @@
   </button>
 </template>
 
-<script setup></script>
+<script setup>
+import { useStore } from 'vuex'
+const store = useStore()
+
+const handleHandleClick = () => {
+  store.dispatch('Sidebar/toggleSidebar')
+}
+</script>
 
 <style scoped lang="scss">
 .SideBarButton {
