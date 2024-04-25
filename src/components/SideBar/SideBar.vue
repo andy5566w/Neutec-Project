@@ -4,10 +4,9 @@
     :class="{ active: $store.state.Sidebar.isOpenSidebar }"
     @click="$store.dispatch('Sidebar/toggleSidebar')"
   ></div>
-  <div
-    class="SideBar"
-    :class="{ active: $store.state.Sidebar.isOpenSidebar }"
-  ></div>
+  <div class="SideBar" :class="{ active: $store.state.Sidebar.isOpenSidebar }">
+    side bar123
+  </div>
 </template>
 
 <script setup></script>
