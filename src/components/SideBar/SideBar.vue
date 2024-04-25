@@ -5,11 +5,13 @@
     @click="$store.dispatch('Sidebar/toggleSidebar')"
   ></div>
   <div class="SideBar" :class="{ active: $store.state.Sidebar.isOpenSidebar }">
-    side bar123
+    <parent-item :items="$store.state.Sidebar.items" />
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import ParentItem from '@/components/SideBar/ParentItem.vue'
+</script>
 
 <style scoped lang="scss">
 .overlay {
@@ -27,9 +29,10 @@
 }
 .SideBar {
   position: fixed;
+  padding: 0.5rem;
   right: 0;
   height: 100%;
-  background-color: rgba(black, 50%);
+  background-color: rgba(black, 70%);
   transition: transform 0.2s ease-in;
   transform: translateX(100%);
 
