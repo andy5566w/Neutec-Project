@@ -36,6 +36,8 @@ import ParentItem from '@/components/SideBar/ParentItem.vue'
   background-color: rgba(black, 90%);
   transition: transform 0.2s ease-in;
   transform: translateX(100%);
+  min-width: 150px;
+  top: 0;
 
   &.active {
     transform: translateX(0);
