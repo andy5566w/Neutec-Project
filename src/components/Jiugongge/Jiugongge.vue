@@ -11,7 +11,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   padding: 0 10px;
-  height: 90vh;
+  height: 60vh;
   align-content: end;
   .box {
     height: 100px;

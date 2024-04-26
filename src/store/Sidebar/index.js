@@ -2,6 +2,7 @@ import { mockData } from '@/const/mockData.js'
 import {
   setClickedItemByKey,
   setItemsToDefault,
+  flatItems,
 } from '@/store/Sidebar/utils.js'
 
 export const Sidebar = {
@@ -12,6 +13,11 @@ export const Sidebar = {
       isOpenSidebar: false,
       items,
     }
+  },
+  getters: {
+    getters_get_flat_items(state) {
+      return flatItems(state.items)
+    },
   },
   mutations: {
     TOGGLE_SIDEBAR(state) {
