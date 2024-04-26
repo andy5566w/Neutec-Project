@@ -7,31 +7,40 @@ export const Ball = {
       balls: [
         {
           key: getUniqueID(),
-          distance: 300,
-          bottom: 300,
+          posX: 350,
+          posY: -320,
+          left: 50,
+          bottom: 320,
         },
         {
           key: getUniqueID(),
-          distance: 300,
-          bottom: 50,
+          posX: 350,
+          posY: -70,
+          left: 50,
+          bottom: 70,
         },
       ], // { bottom: Number, distance: Number }
     }
   },
   mutations: {},
   actions: {
-    addBall({ state }, number = 1) {
+    addBall({ state }, { number = 1, posX, left, posY, bottom } = {}) {
       for (let i = 0; i < number; i++) {
-        const ballData = {
+        state.balls.push({
           key: getUniqueID(),
-          distance: 300,
-          bottom: getRange(20, 350),
-        }
-        state.balls.push(ballData)
+          posX: posX || getRange(150, 300),
+          posY: posY || getRange(10, 50),
+          left: left || getRange(10, 50),
+          bottom: bottom || getRange(20, 350),
+        })
       }
     },
-    removeBall({ state }) {
-      state.balls.shift()
+    removeBall({ state }, number = 1) {
+      for (let i = 0; i < number; i++) {
+        if (state.balls.length) {
+          state.balls.pop()
+        }
+      }
     },
   },
 }
