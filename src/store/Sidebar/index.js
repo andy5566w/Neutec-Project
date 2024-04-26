@@ -1,5 +1,8 @@
 import { mockData } from '@/const/mockData.js'
-import { setClickedItemByKey, setItemsToDefault } from '@/utils/Sidebar.js'
+import {
+  setClickedItemByKey,
+  setItemsToDefault,
+} from '@/store/Sidebar/utils.js'
 
 export const Sidebar = {
   namespaced: true,
