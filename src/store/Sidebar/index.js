@@ -10,6 +10,7 @@ export const Sidebar = {
   state() {
     const items = setItemsToDefault(mockData)
     return {
+      selectedItemsKey: '64f',
       isOpenSidebar: false,
       items,
     }
@@ -29,6 +30,7 @@ export const Sidebar = {
       commit('TOGGLE_SIDEBAR')
     },
     clickSidebarItem({ state }, key) {
+      state.selectedItemsKey = key
       state.items = setItemsToDefault(state.items)
       setClickedItemByKey(key, state.items)
     },
