@@ -24,7 +24,7 @@
           })
         "
       >
-        add 4 ball
+        add 4 balls
       </button>
       <button
         @click="
@@ -37,11 +37,11 @@
           })
         "
       >
-        add 100 ball
+        add 100 balls
       </button>
       <button @click="$store.dispatch('Ball/removeBall')">remove 1 ball</button>
       <button @click="$store.dispatch('Ball/removeBall', 100)">
-        remove 100 ball
+        remove 100 balls
       </button>
     </div>
     <h1>The number of balls: {{ $store.state.Ball.balls.length }}</h1>
