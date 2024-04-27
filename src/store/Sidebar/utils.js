@@ -20,3 +20,14 @@ export function setItemsToDefault(items, depth = 1) {
   }
   return items
 }
+
+export function flatItems(items, result = []) {
+  for (const item of items) {
+    const { children, depth, isClicked, ...rest } = item
+    result.push(rest)
+    if (Array.isArray(item.children)) {
+      flatItems(item.children, result)
+    }
+  }
+  return result
+}

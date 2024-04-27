@@ -5,12 +5,25 @@
     @click="$store.dispatch('Sidebar/toggleSidebar')"
   ></div>
   <div class="SideBar" :class="{ active: $store.state.Sidebar.isOpenSidebar }">
+    <dropdown-menu />
     <parent-item :items="$store.state.Sidebar.items" />
   </div>
 </template>
 
 <script setup>
 import ParentItem from '@/components/SideBar/ParentItem.vue'
+import DropdownMenu from '@/components/SideBar/DropdownMenu.vue'
+import { onMounted } from 'vue'
+import { useStore } from 'vuex'
+
+const store = useStore()
+
+onMounted(() => {
+  const key = localStorage.getItem('neutec-key')
+  if (key) {
+    store.dispatch('Sidebar/clickSidebarItem', key)
+  }
+})
 </script>
 
 <style scoped lang="scss">
