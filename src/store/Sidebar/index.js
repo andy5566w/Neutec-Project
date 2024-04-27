@@ -33,6 +33,7 @@ export const Sidebar = {
       state.selectedItemsKey = key
       state.items = setItemsToDefault(state.items)
       setClickedItemByKey(key, state.items)
+      localStorage.setItem('neutec-key', key)
     },
   },
 }
